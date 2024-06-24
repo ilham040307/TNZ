@@ -42,7 +42,7 @@ pwd=os.getcwd()
 
 # Logo
 logo=f'''
-{green}████████████████████████████████████████████████████████
+{black}████████████████████████████████████████████████████████
 {red}█─▄─▄─█▄─▀█▄─▄█░▄▄░▄█▀▀▀▀▀██─▄─▄─█─▄▄─█─▄▄─█▄─▄███─▄▄▄▄█
 {yellow}███─████─█▄▀─███▀▄█▀██████████─███─██─█─██─██─██▀█▄▄▄▄─█
 {blue}▀▀▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▄▄▄▀▀▀▀▀▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀
@@ -145,8 +145,9 @@ def encryptsh():
         filedata = temp_f.read()
         out_f.write("# Encrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp")
-    sprint(f"{success}{out_file} saved in {pwd}")
-    mover(out_file)
+    mpath=/sdcard/
+    os.system(f'''mv -f "{out_file}" "{mpath}" ''')
+    sprint(f"{success}{out_file} saved in {mpath}")
 
 # Decrypt bash code by "eval"
 def decryptsh():
@@ -169,8 +170,9 @@ def decryptsh():
         filedata = temp_f2.read()
         out_f.write("# Decrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp2")
-    sprint(f"{success}{out_file} saved in {pwd}")
-    mover(out_file)
+    mpath=/sdcard/
+    os.system(f'''mv -f "{out_file}" "{mpath}" ''')
+    sprint(f"{success}{out_file} saved in {mpath}")
     
 # Main function
 def main():
@@ -180,7 +182,7 @@ def main():
     print(f"{green}[2]{yellow} Decrypt{cyan} Bash")
     print(f"{green}[3]{yellow} Source")
     print(f"{green}[4]{yellow} About")
-    print(f"{red}[0]{yellow} Exit")
+    print(f"{red}[0]{red} Exit")
     choose = input(f"{ask}{blue}Choose an option : {cyan}")
     while True:
         if choose == "1" or choose=="01":
