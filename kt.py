@@ -145,7 +145,7 @@ def encryptsh():
         filedata = temp_f.read()
         out_f.write("# Encrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp")
-    sprint(f"{success}{in_file} saved in {out_file}")
+    sprint(f"{success}saved in {out_file}")
 
 # Decrypt bash code by "eval"
 def decryptsh():
@@ -168,7 +168,7 @@ def decryptsh():
         filedata = temp_f2.read()
         out_f.write("# Decrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp2")
-    sprint(f"{success}{in_file} saved in {out_file}")
+    sprint(f"{success}saved in {out_file}")
     
 # Main function
 def main():
