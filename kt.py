@@ -32,8 +32,8 @@ cyan="\033[0;36m"
 white="\033[0;37m"
 
 # Snippets
-ask = green + '\n[' + white + '?' + green + '] '+ yellow
-success = green + '\n[' + white + '√' + green + '] '
+ask = green + '\n[' + white + '-' + green + '] '+ yellow
+success = green + '\n[' + white + '✓' + green + '] '
 error = red + '\n[' + white + '!' + red + '] '
 info= yellow + '\n[' + white + '+' + yellow + '] '+ cyan
 
@@ -42,11 +42,12 @@ pwd=os.getcwd()
 
 # Logo
 logo=f'''
-{black}████████████████████████████████████████████████████████
+{blue}████████████████████████████████████████████████████████
 {red}█─▄─▄─█▄─▀█▄─▄█░▄▄░▄█▀▀▀▀▀██─▄─▄─█─▄▄─█─▄▄─█▄─▄███─▄▄▄▄█
 {yellow}███─████─█▄▀─███▀▄█▀██████████─███─██─█─██─██─██▀█▄▄▄▄─█
-{blue}▀▀▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▄▄▄▀▀▀▀▀▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀
-{cyan}                              [ @By SukitooV1 ]
+{red}▀▀▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▄▄▄▀▀▀▀▀▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀
+{blue}████████████████████████████████████████████████████████
+{cyan}                    [ @By iTenzz ]
 '''
 
 # Normal slowly printer
@@ -60,11 +61,11 @@ def sprint(sentence, second=0.04):
 def about():
     os.system("clear")
     sprint(logo, 0.01)
-    print(f"{cyan}[ToolName]  {purple} : Tnz Tools")
-    print(f"{cyan}[Version]   {purple} :[1.0]")
-    print(f"{cyan}[Author]    {purple} :[SukitooV1]")
-    print(f"{cyan}[Github]    {purple} :[https://github.com/ilham040307]")
-    print(f"{cyan}[Telegram]     {purple} :[@SukitooV1]\n")
+    print(f"{cyan}[ToolName]  {purple} :[ Tnz Tools ]")
+    print(f"{cyan}[Version]   {purple} :[ 1.0 ]")
+    print(f"{cyan}[SourceScript]   {purple} :[ SukitooV1 ]")
+    print(f"{cyan}[Github]    {purple} :[ https://github.com/ilham040307 ]")
+    print(f"{cyan}[Telegram]     {purple} :[ @SukitooV1 ]\n")
     ret=input(ask+"1 Back Menu | 0 For Exit  > "+green)
     if ret=="1":
         main()
@@ -146,6 +147,7 @@ def encryptsh():
         out_f.write("# Encrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp")
     sprint(f"{success}saved in {out_file}")
+    exit()
 
 # Decrypt bash code by "eval"
 def decryptsh():
@@ -169,6 +171,7 @@ def decryptsh():
         out_f.write("# Decrypted by Tnz Tools\n#@SukitooV1\n\n"+filedata)
     os.remove(".temp2")
     sprint(f"{success}saved in {out_file}")
+    exit()
     
 # Main function
 def main():
